@@ -19,32 +19,38 @@ $(function(){
 
 $('#search').click(function(e){
     e.preventDefault();
-     document.getElementById("myDiv").style.display="block";
+    document.getElementById("myDiv").style.display="block";
 
     param = {
-        "Action":"GetEmployeeAttendannce",
+        "Action":"GetEmployeeLocAttendannce",
         "dateFrom":$('#dateFrom').val(),
         "dateTo":$('#dateTo').val(),
-        "empCodeParam":$('#empCode').val()
+        "alllocation":$('#alllocation').val()
 
     };
     
     param = JSON.stringify(param);
+
+    // console.log(param);
+
+    // return false;
     
     $.ajax({
         type: "POST",
-        url: "../dtr/dtr-viewing-process.php",
+        url: "../dtr/alldtr-viewing-process.php",
         data: {data:param} ,
         success: function (data){
             // console.log("success: "+ data);
             $('#empDtrList').remove();
+            $('#myInput').remove();
             $('#dtrViewList').append(data);
             XLSXExport();
-             document.getElementById("myDiv").style.display="none";
+            document.getElementById("myDiv").style.display="none";
+
         },
         error: function (data){
             // console.log("error: "+ data);	
-             document.getElementById("myDiv").style.display="none";
+            document.getElementById("myDiv").style.display="none";
         }
     });//ajax
 

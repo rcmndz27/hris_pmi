@@ -215,6 +215,7 @@ else
                                         echo "<li class='dropdown'><a href='#' class='".$admintools."'><i class='fas fa-toolbox fa-fw'></i>&nbsp;HR TOOLS ".$appr."<i class='bi bi-chevron-down'></i></a>
                                                 <ul> 
                                                   <li><a href='../dtr/index.php'>All Employee Attendance</a></li>
+                                                   <li><a href='../dtr/alldtr_index.php'>By Location - All Employee Attendance</a></li>
                                                 </ul>
                                           </li>";
                                     break; 

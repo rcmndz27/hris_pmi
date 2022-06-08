@@ -7,7 +7,7 @@
 
             try
             {
-                $dbstrings = "sqlsrv:Server=192.168.201.8;Database=hrissys_dev";
+                $dbstrings = "sqlsrv:Server=192.168.201.8;Database=biotime8";
                 
                 $dbConnection = new PDO($dbstrings, "mgr", "P@55w0rd456"); 
 

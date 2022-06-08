@@ -160,6 +160,35 @@
         }
 
 
+        public function GetBioLoc($type)
+        {
+            global $dbConnection;
+
+            try
+            {
+                $data = [];
+               
+
+                $sql = $dbConnection->prepare(@"SELECT DISTINCT area_alias from biotime8.dbo.iclock_transaction");
+                $sql->execute();
+
+                if ($type == "alllocation")
+                {
+                    while ($r = $sql->fetch(PDO::FETCH_ASSOC))
+                    {
+                        array_push($data, array($r["area_alias"],$r["area_alias"]));
+                    }
+                }
+
+                return $data;
+            }
+            catch (Exception $e)
+            {
+                echo $e->getMessage();
+            }
+        }
+
+
         public function GetPayLocation($type)
         {
             global $connL;
