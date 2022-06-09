@@ -32,6 +32,7 @@ Class EmployeeLocAttendance{
             <thead>
                 <tr>
                     <th>Full Name</th>
+                    <th>Emp Code</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Type</th>
@@ -47,6 +48,7 @@ Class EmployeeLocAttendance{
 
                     echo    "<tr>".
                                 "<td>" . $result['fullname'] . "</td>".
+                                "<td>" . $result['emp_code'] . "</td>".
                                 "<td>" . date('m-d-Y', strtotime($result['punchdate'])). "</td>".
                                 "<td>" . $pnchtime . "</td>".
                                 "<td>" . $result['type'] . "</td>".
