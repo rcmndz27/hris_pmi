@@ -20,15 +20,18 @@ Class EmployeeAttendance{
 
         global $connL;
 
+        $dtfrom = date('Y-m-d', strtotime($dateFrom));
+        $dtto = date('Y-m-d', strtotime($dateTo));
+
         if(strlen($empCodeParam) === 0){
 
             $whereClause = " WHERE punch_date BETWEEN :startDate AND :endDate ";
-            $param = array(":startDate" => $dateFrom, ":endDate" => $dateTo );
+            $param = array(":startDate" => $dtfrom, ":endDate" => $dtto );
             
         }else{
 
             $whereClause = " WHERE (emp_pin = :emp_pin  OR emp_ssn = :emp_ssn) AND punch_date BETWEEN :startDate AND :endDate ";
-            $param = array(":emp_ssn" => $empCodeParam, ":startDate" => $dateFrom, ":endDate" => $dateTo );
+            $param = array(":emp_ssn" => $empCodeParam, ":startDate" => $dtfrom, ":endDate" => $dtto );
         }
 
         $query = 'EXEC hrissys_dev.dbo.xp_attendance_portal :emp_ssn,:startDate,:endDate';
