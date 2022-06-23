@@ -349,7 +349,7 @@ font-weight: bolder;
                 <div class="col">
                     <div class="form-group">
                         <label for="username"><b>USERNAME</b></label>
-                        <input type="text" name="userid" id="userid" class="form-control" autocomplete="off" onkeyup="this.value = this.value.toUpperCase();">
+                        <input type="text" name="userid" id="userid" class="form-control" autocomplete="on" onkeyup="this.value = this.value.toUpperCase();">
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ Class EmployeeLocAttendance{
         return $time;
     }
 
-    function GetEmployeeLocAttendannce($alllocation, $dateFrom, $dateTo){
+    function GetEmployeeLocAttendannce($alllocation,$dateFrom,$dateTo){
 
 
          global $dbConnection;
@@ -21,7 +21,7 @@ Class EmployeeLocAttendance{
                 case when punch_state = 0 then 'TIME-IN' else 'TIME-OUT' END as [type] from personnel_employee a left join iclock_transaction b on a.emp_code = b.emp_code
                 where b.area_alias = :alllocation and b.punch_time >= :startDate and b.punch_time <= :endDate
                 ORDER BY fullname,punchdate,type asc";
-        $param = array(":alllocation" => $alllocation,":startDate" => $dateFrom, ":endDate" => $dateTo);
+        $param = array(":alllocation" => $alllocation,":startDate" => $dateFrom, ":endDate" => date('Y-m-d', strtotime($dateTo. ' + 1 days')));
         $stmt =$dbConnection->prepare($query);
         $stmt->execute($param);
         $result = $stmt->fetch();
