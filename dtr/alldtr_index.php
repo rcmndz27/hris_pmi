@@ -90,20 +90,9 @@ table {
             <label for="employee" class="col-form-label pad">LOCATION:</label>
         <div class='col-md-3'>
             <select class="form-select" id="alllocation" name="alllocation" >
-                    <option value="DIAN">DIAN</option>
-                    <option value="GUADALUPE">GUADALUPE</option>
-                    <option value="IMC - MBI">IMC - MBI</option>
-                    <option value="JASAAN">JASAAN</option>
-                    <option value="MACBUILDERS">MACBUILDERS</option>
-                    <option value="MAKATI">MAKATI</option>
-                    <option value="MBI">MBI</option>
-                    <option value="MBI - IMC">MBI - IMC</option>
-                    <option value="MBI-PALANAS">MBI-PALANAS</option>
-                    <option value="MONDRIAN">MONDRIAN</option>
-                    <option value="PMI TOWER">PMI TOWER</option>
-                    <option value="PMI TOWER - MBI">PMI TOWER - MBI</option>
-                    <option value="PMITOWER15">PMITOWER15</option>
-                    <option value="PMITOWER16">PMITOWER16</option>
+                    <option value="1">PMI16th</option>
+                    <option value="2">PMI TOWER</option>
+                    <option value="3">PMI15th</option>
             </select>
         </div>  
         <label for="from" class="col-form-label pad">FROM:</label>
