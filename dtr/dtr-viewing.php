@@ -40,6 +40,7 @@ Class EmployeeAttendance{
         $result = $stmt->fetch();
 
         echo "
+        <button id='btnExport' onclick='exportReportToExcel(this)' class='xprtxcl'><i class='fas fa-file-export'></i>EXPORT TO EXCEL</button>
         <table id='empDtrList' class='table table-striped table-sm'>
             <thead>
                 <tr>

@@ -36,6 +36,22 @@ td:last-child button {
    /*background-size:200px 120px;*/
 }
 
+.xprtxcl{
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.xprtxcl:hover{
+    opacity: 0.5;
+}
+
+
 
 
 .btnView:hover {

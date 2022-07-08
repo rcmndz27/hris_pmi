@@ -19,7 +19,8 @@
 <script src="<?= constant('NODE'); ?>xlsx/dist/xlsx.core.min.js"></script>
 <script src="<?= constant('NODE'); ?>file-saverjs/FileSaver.min.js"></script>
 <script src="<?= constant('NODE'); ?>tableexport/dist/js/tableexport.min.js"></script>
-<!-- <script type="text/javascript" src='../js/script.js'></script> -->
+<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+<script type="text/javascript" src='../js/script.js'></script>
 
 <style type="text/css">
 .bgen{
@@ -95,12 +96,44 @@ label{
     <div class="row">
         <div class="col-md-12">
             <div class="panel-body">
-                <div id="tableList" class="table-responsive-sm table-body"></div>
+                <div id="dtrViewList" class="table-responsive-sm table-body"></div>
             </div>
         </div>
     </div>
     </div>
 </div>
     <br><br>
+<script type="text/javascript">
+    
+function exportReportToExcel() {
+  let table = document.getElementsByTagName("table"); // you can use document.getElementById('tableId') as well by providing id to the table tag
+  TableToExcel.convert(table[0], { // html code may contain multiple tables so here we are refering to 1st table tag
+    name: `export_myattendance.xlsx`, // fileName you could use any name
+    sheet: {
+      name: 'Attendance' // sheetName
+    }
+  });
+}
 
+           $('#dateTo').change(function(){
+
+                if($('#dateTo').val() < $('#dateFrom').val()){
+
+                    swal({text:"Date to must be greater than date from!",icon:"error"});
+
+                    var input2 = document.getElementById('dateTo');
+                    input2.value = '';               
+                }
+            });
+
+
+            $('#dateFrom').change(function(){
+
+                if($('#dateFrom').val() > $('#dateTo').val()){
+                    var input2 = document.getElementById('dateTo');
+                    document.getElementById("dateTo").min = $('#dateFrom').val();
+                    input2.value = '';
+                }
+            });
+</script>
 <?php include('../_footer.php');  ?>

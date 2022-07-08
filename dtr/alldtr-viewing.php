@@ -27,6 +27,7 @@ Class EmployeeLocAttendance{
         $result = $stmt->fetch();
 
         echo "
+        <button id='btnExport' onclick='exportReportToExcel(this)' class='xprtxcl'><i class='fas fa-file-export'></i>EXPORT TO EXCEL</button>        
         <input type='text' id='myInput' class='form-control' onkeyup='myFunction()' placeholder='Search for employee..' title='Type in leave details'> 
         <table id='empDtrList' class='table table-striped table-sm'>
             <thead>

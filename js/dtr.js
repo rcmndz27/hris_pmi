@@ -36,9 +36,9 @@ $(function(){
             url: "../controller/dtrProcess.php",
             data: {data:param} ,
             success: function (data){
-                // console.log("success: "+ data);
-                $("#tableList").html(data);
-                XLSXExport();
+                    $('#dtrList').remove();      
+                    $('#btnExport').remove();
+                    $('#dtrViewList').append(data);   
             },
             error: function (data){
                 // console.log("error: "+ data);	
