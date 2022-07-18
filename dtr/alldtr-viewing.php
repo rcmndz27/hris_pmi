@@ -19,7 +19,7 @@ Class EmployeeLocAttendance{
         $query = "SELECT b.area_alias as location,a.emp_code as emp_code,
                 punch_time as punchdate,a.first_name+' '+a.last_name as fullname, 
                 case when punch_state = 0 then 'TIME-IN' else 'TIME-OUT' END as [type] from personnel_employee a left join iclock_transaction b on a.emp_code = b.emp_code
-                where b.terminal_id_def = :alllocation and b.punch_time >= :startDate and b.punch_time <= :endDate
+                where b.terminal_id = :alllocation and b.punch_time >= :startDate and b.punch_time <= :endDate
                 ORDER BY fullname,punchdate,type asc";
         $param = array(":alllocation" => $alllocation,":startDate" => $dateFrom, ":endDate" => date('Y-m-d', strtotime($dateTo. ' + 1 days')));
         $stmt =$dbConnection->prepare($query);
