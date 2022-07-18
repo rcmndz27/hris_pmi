@@ -103,11 +103,11 @@ if (empty($_SESSION['userid'])) {
     <meta http-equiv='pragma' content='no-cache'>
 
     <link type='image/x-png' rel='icon' href='img/logo-icon.png'>
-    <link rel="stylesheet" type="text/css" href="../hris/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel='stylesheet' href='css/login.css'>
 
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script type='text/javascript' src="../hris/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Add new style -->
 

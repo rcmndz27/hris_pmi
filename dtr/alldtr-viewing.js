@@ -43,6 +43,7 @@ $('#search').click(function(e){
             // console.log("success: "+ data);
             $('#empDtrList').remove();      
             $('#btnExport').remove();
+            $('#myInput').remove();
             $('#dtrViewList').append(data);  
             document.getElementById("myDiv").style.display="none";
 
